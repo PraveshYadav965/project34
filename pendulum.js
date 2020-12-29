@@ -1,13 +1,11 @@
 class Pendulum{
     constructor(x,y, color){
         var options ={
-           ' restitution': 1,
-           'friction': 0,
-           'frictionAir':0.0,
-           'slop':1,
-           'inertia': Infinity
+            restitution: 1,
+           friction: 0,
+           density:0.8
         };
-        this.body = Bodies.rectangle(x, y, 40,40, options);
+        this.body = Bodies.circle(x, y,30, options);
         this.x= x;
         this.y= y;
         this.color = color;
@@ -21,7 +19,8 @@ class Pendulum{
         rotate(angle);
         noStroke();
         fill(this.color);
-        ellipse(0, 0, 60, 60);
+        ellipseMode(RADIUS)
+        ellipse(0, 0, 30, 30);
         pop();
     }
 }
