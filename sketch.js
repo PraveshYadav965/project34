@@ -2,9 +2,8 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-const Mouse = Matter.Mouse;
+
 const Constraint = Matter.Constraint;
-const MouseConstraint = Matter.MouseConstraint;
 
 var canvas;
 var world, engine;
@@ -18,14 +17,7 @@ function setup(){
     engine = Engine.create();
    world = engine.world;
 
-   let canvasmouse = Mouse.create(canvas.elt);
-   canvasmouse.pixelRatio = pixelDensity();
-   let options ={
-       mouse:canvasmouse
-   };
-   mConstraint = MouseConstraint.create(engine, options);
-   World.add(world, mConstraint);
-
+   
    pendulum1 = new Pendulum(340, 450, "white");
    pendulum2 = new Pendulum(400, 450, "white");
    pendulum3 = new Pendulum(460, 450, "white");
